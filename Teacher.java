@@ -11,6 +11,10 @@ public class Teacher {
         this.salary = salary;
     }
 
+    public Teacher() {
+
+    }
+
     public int getId() {
         return id;
     }

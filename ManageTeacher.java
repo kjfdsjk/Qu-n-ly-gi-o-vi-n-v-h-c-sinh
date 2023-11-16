@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class ManageTeacher {
@@ -38,15 +39,21 @@ public class ManageTeacher {
         this.teacherList.remove(index);
     }
 
-    public void findBySubject(String teachingSubject){
-        for (Teacher teacher: teacherList) {
-            if (teacher.getTeachingSubject().equals(teachingSubject)){
+    public void findBySubject(String teachingSubject) {
+        for (Teacher teacher : teacherList) {
+            if (teacher.getTeachingSubject().equals(teachingSubject)) {
                 System.out.println(teacher);
             }
         }
     }
 
-    public void
+    public void sortUpBySalary() {
+        List<Teacher> listSortUp = new ArrayList<>(teacherList);
+        listSortUp.sort(Comparator.comparing(Teacher::getSalary));
+        for (Teacher teacher:listSortUp) {
+            System.out.println(teacher);
+        }
+    }
 
 }
 
